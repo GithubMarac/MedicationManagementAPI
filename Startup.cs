@@ -20,6 +20,17 @@ namespace MedicationManagementApi
 
         public void ConfigureServices(IServiceCollection services)
         {
+                services.AddCors(options =>
+                {
+                    options.AddPolicy("AllowSpecificOrigin",
+                        builder =>
+                        {
+                            builder.WithOrigins("http://localhost:4200")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                        });
+                });
+
             services.AddControllers();
             services.AddDbContext<MedicationContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -34,6 +45,8 @@ namespace MedicationManagementApi
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("AllowSpecificOrigin");
 
             app.UseRouting();
 
