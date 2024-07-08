@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "6mRgPKtW9UaaCZmakfMCQL1hwhdfedvDZtfpxvwvp6I=",
+  "Source": "MedicationManagementAPI",
+  "BasePath": "_content/MedicationManagementAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
